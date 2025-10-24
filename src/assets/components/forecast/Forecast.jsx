@@ -1,13 +1,13 @@
 import React from "react";
-import weatherImg from "../resources/img/cloudy.png";
+import weatherImg from "../../resources/img/cloudy.png";
 
 
-import './Forecast.scss';
+import './forecast.scss';
 
 const Forecast = () => {
     return (
         <div className="forecast">
-            <h2 className="forecast__title">Weather Forecast</h2>
+            <h2 className="forecast__title">Forecast</h2>
             <div className="forecast__wrapper">
                 <div className="forecast__details">
                     <div className="forecast__border">

@@ -1,5 +1,5 @@
 import React from "react";
-import cloud from "../resources/img/cloud.png";
+import cloud from "../../resources/img/cloud.png";
 
 import "./appHeader.scss";
 

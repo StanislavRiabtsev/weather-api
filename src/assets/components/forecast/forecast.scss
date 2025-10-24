@@ -6,18 +6,17 @@
     margin-top: 3em;
     display: flex;
     flex-direction: row;
-    gap: 2em;
+    gap: 1em;
 }
 
 .forecast__img {
     width: 100px;
     height: 100px;
-    margin-right: 1em;
 }
 
 .forecast__title {
     margin-top: 3em;
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom: 0.5em;
 }
 
@@ -33,10 +32,13 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 1em;
     border-radius: 8px;
+    width: 170px;
+    box-sizing: border-box;
 }
 
 .forecast__temp,
 .forecast__condition {
     font-size: 0.8em;
+    font-weight: 700;
     margin: 10px;
 }
