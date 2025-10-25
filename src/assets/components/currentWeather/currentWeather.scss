@@ -42,6 +42,8 @@
         width: 300px;
         box-sizing: border-box;
         margin-top: 40px;
+        width: 300px;
+        height: 405px;
     }
 
     &__subtitle {
@@ -58,6 +60,7 @@
 
     &__temperature,
     &__condition {
+        padding-top: 10px;
         font-size: 1.2em;
         font-weight: 700;
         margin: 15px 10px;
@@ -103,4 +106,30 @@
             font-weight: 700;
         }
     }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.format {
+    margin-top: 10px;
+    width: 200px;
+}
+
+#clear-day,
+#pcd-rays {
+    animation: rotate 10s infinite linear;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+}
+
+svg {
+    fill: #FFFFFF;
 }
