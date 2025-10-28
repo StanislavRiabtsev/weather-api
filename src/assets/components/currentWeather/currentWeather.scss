@@ -107,29 +107,3 @@
         }
     }
 }
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.format {
-    margin-top: 10px;
-    width: 200px;
-}
-
-#clear-day,
-#pcd-rays {
-    animation: rotate 10s infinite linear;
-    transform-origin: 50% 50%;
-    transform-box: fill-box;
-}
-
-svg {
-    fill: #FFFFFF;
-}

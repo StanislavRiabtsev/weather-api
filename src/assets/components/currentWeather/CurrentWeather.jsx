@@ -57,8 +57,8 @@ const CurrentWeather = () => {
                     {/* <PartlyCloudyNight /> */}
                     {/* <Rain /> */}
                     {/* <Sleet /> */}
-                    {/* <Snow /> */}
-                    <Wind />
+                    <Snow />
+                    {/* <Wind /> */}
                     <p className="current-weather__temperature">
                         Temperature:
                         <span className="current-weather__temp-value current-weather__temp-value--hot">22°C</span>
