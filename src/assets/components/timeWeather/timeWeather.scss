@@ -1,4 +1,4 @@
-.forecast {
+.time-weather {
     color: rgba(255, 255, 255, 0.87);
 
     &__wrapper {
@@ -6,11 +6,6 @@
         display: flex;
         flex-direction: row;
         gap: 1em;
-    }
-
-    &__img {
-        width: 100px;
-        height: 100px;
     }
 
     &__title {
@@ -22,6 +17,7 @@
     &__details {
         display: flex;
         justify-content: space-between;
+        box-sizing: border-box;
     }
 
     &__border {
@@ -29,12 +25,11 @@
         flex-direction: column;
         align-items: center;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 1em;
         border-radius: 8px;
-        width: 170px;
         box-sizing: border-box;
     }
 
+    &__time,
     &__temp,
     &__condition {
         font-size: 0.8em;
