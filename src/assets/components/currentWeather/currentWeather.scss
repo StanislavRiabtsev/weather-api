@@ -1,0 +1,109 @@
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+    &__title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    &__primary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1.5em;
+        border-radius: 8px;
+        width: 340px;
+        height: 440px;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 24px 2px rgba(255, 255, 255, 0.4);
+        margin-top: 20px;
+    }
+
+    &__secondary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1.5em;
+        border-radius: 8px;
+        width: 300px;
+        box-sizing: border-box;
+        margin-top: 40px;
+        width: 300px;
+        height: 405px;
+    }
+
+    &__subtitle {
+        font-size: 1.5em;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        width: 150px;
+        height: 150px;
+        margin: 20px 0;
+    }
+
+    &__temperature,
+    &__condition {
+        padding-top: 10px;
+        font-size: 1.2em;
+        font-weight: 700;
+        margin: 15px 10px;
+    }
+
+    &__temp-value {
+        font-weight: 700;
+        margin-left: 10px;
+
+        &--hot {
+            color: rgba(222, 52, 52, 0.7);
+        }
+
+        &--cold {
+            color: rgba(52, 152, 219, 0.7);
+        }
+    }
+
+    &__condition-text {
+        font-weight: 700;
+        margin-left: 10px;
+        color: #d6ff51;
+    }
+
+    &__stats {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    &__stat {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.1em;
+        margin: 18px 10px;
+
+        span:first-child {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        span:last-child {
+            font-weight: 700;
+        }
+    }
+}
