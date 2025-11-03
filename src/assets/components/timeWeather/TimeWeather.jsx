@@ -3,8 +3,8 @@ import React from "react";
 import ClearDay from "../icons/ClearDay.jsx";
 import Cloudy from "../icons/Cloudy.jsx";
 import Fog from "../icons/Fog.jsx";
-import PartlyCloudyDay from "../icons/PartlyCloudyDay.jsx";
-import PartlyCloudyNight from "../icons/PartlyCloudyNight.jsx";
+import CloudyDay from "../icons/CloudyDay.jsx";
+import CloudyNight from "../icons/CloudyNight.jsx";
 import Rain from "../icons/Rain.jsx";
 import Sleet from "../icons/Sleet.jsx";
 import Snow from "../icons/Snow.jsx";
@@ -35,12 +35,12 @@ const TimeWeather = () => {
                         </div>
                         <div class="time-weather__cell">
                             <p class="time-weather__time">Time: 12:00 PM</p>
-                            <PartlyCloudyDay />
+                            <CloudyDay />
                             <p class="time-weather__temp">Temperature: 25°C</p>
                         </div>
                         <div class="time-weather__cell">
                             <p class="time-weather__time">Time: 12:00 PM</p>
-                            <PartlyCloudyNight />
+                            <CloudyNight />
                             <p class="time-weather__temp">Temperature: 25°C</p>
                         </div>
                         <div class="time-weather__cell">

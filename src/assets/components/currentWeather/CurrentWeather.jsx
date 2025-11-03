@@ -1,18 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
+
+import Compass from "../icons/Compass.jsx";
 import ClearDay from "../icons/ClearDay.jsx";
 import Cloudy from "../icons/Cloudy.jsx";
-// import Cloudy from "../icons/Cloudy.jsx";
 import Fog from "../icons/Fog.jsx";
-import PartlyCloudyDay from "../icons/PartlyCloudyDay.jsx";
-import PartlyCloudyNight from "../icons/PartlyCloudyNight.jsx";
+import CloudyDay from "../icons/CloudyDay.jsx";
+import CloudyNight from "../icons/CloudyNight.jsx";
 import Rain from "../icons/Rain.jsx";
 import Sleet from "../icons/Sleet.jsx";
 import Snow from "../icons/Snow.jsx";
 import Wind from "../icons/Wind.jsx";
-import Compass from "../icons/Compass.jsx";
 
 import './currentWeather.scss';
-import ClearNight from "../icons/ClearNight.jsx";
 
 const CurrentWeather = () => {
     return (
@@ -49,16 +48,7 @@ const CurrentWeather = () => {
                     </ul>
                 </div>
                 <div className="current-weather__primary">
-                    {/* <ClearDay /> */}
-                    {/* <ClearNight /> */}
-                    {/* <Cloudy /> */}
-                    {/* <Fog /> */}
-                    {/* <PartlyCloudyDay /> */}
-                    {/* <PartlyCloudyNight /> */}
-                    {/* <Rain /> */}
-                    {/* <Sleet /> */}
-                    <Snow />
-                    {/* <Wind /> */}
+                    <ClearDay />
                     <p className="current-weather__temperature">
                         Temperature:
                         <span className="current-weather__temp-value current-weather__temp-value--hot">22°C</span>
