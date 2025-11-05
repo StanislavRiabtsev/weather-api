@@ -2,18 +2,19 @@ import React, { useState, useEffect, useRef } from "react";
 
 import Compass from "../icons/Compass.jsx";
 import ClearDay from "../icons/ClearDay.jsx";
+import ClearNight from "../icons/ClearNight.jsx";
 import Cloudy from "../icons/Cloudy.jsx";
-import Fog from "../icons/Fog.jsx";
 import CloudyDay from "../icons/CloudyDay.jsx";
 import CloudyNight from "../icons/CloudyNight.jsx";
+import Fog from "../icons/Fog.jsx";
 import Rain from "../icons/Rain.jsx";
 import Sleet from "../icons/Sleet.jsx";
-import Thuderstorm from "../icons/Thunderstorm.jsx"
 import Snow from "../icons/Snow.jsx";
+import Thuderstorm from "../icons/Thunderstorm.jsx"
 import Wind from "../icons/Wind.jsx";
 
 import './currentWeather.scss';
-import ClearNight from "../icons/ClearNight.jsx";
+
 
 const CurrentWeather = () => {
     return (
