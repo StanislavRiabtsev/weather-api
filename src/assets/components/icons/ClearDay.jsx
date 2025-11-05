@@ -1,11 +1,24 @@
 import React from "react";
-
 import './icons.scss';
 
-const ClearDay = () => {
+const ClearDay = ({ size }) => {
     return (
-        <svg class="clear-day" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(21 21)" stroke="#DFDEED" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+            className="clear-day"
+            width={size}
+            height={size}
+            viewBox="0 0 60 60"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g
+                transform="translate(11 11)"
+                stroke="#DFDEED"
+                strokeWidth="2"
+                fill="none"
+                fillRule="evenodd"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            >
                 <circle cx="19" cy="19" r="10" />
                 <path d="M19 5V0" />
                 <path d="M28.9 9.1l3.535-3.535" />
@@ -17,7 +30,7 @@ const ClearDay = () => {
                 <path d="M9.1 9.1L5.566 5.566" />
             </g>
         </svg>
-    )
-}
+    );
+};
 
 export default ClearDay;

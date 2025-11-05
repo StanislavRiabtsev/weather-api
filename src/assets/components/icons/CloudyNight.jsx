@@ -1,8 +1,12 @@
 import React from "react";
 
-const CloudyNight = () => {
+const CloudyNight = ({ size }) => {
     return (
-        <svg class="cloudy-night" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+        <svg class="cloudy-night"
+            width={size}
+            height={size}
+            viewBox="0 0 75 75"
+            xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <clipPath id="clipping--cloudy-night">
                     <path d="M80 0v80H0V0h80zM33 35c-5.523 0-10 4.477-10 10 0 .652.062 1.294.185 1.92a1 1 0 0 1-.81 1.177A6.502 6.502 0 0 0 23.5 61h23a8.5 8.5 0 1 0-2.345-16.672 1 1 0 0 1-1.265-.814C42.166 38.648 37.97 35 33 35z" fill="#D8D8D8" />

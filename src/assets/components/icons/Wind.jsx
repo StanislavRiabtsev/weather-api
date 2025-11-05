@@ -1,8 +1,12 @@
 import React from "react";
 
-const Wind = () => {
+const Wind = ({ size }) => {
     return (
-        <svg class="wind" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+        <svg class="wind"
+            width={size}
+            height={size}
+            viewBox="0 0 75 75"
+            xmlns="http://www.w3.org/2000/svg">
             <g stroke="#DFDEED" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                 <path class="wind-1" d="M57 22a7 7 0 0 1 0 14H28" />
                 <path class="wind-1" d="M49 56a7 7 0 0 0 0-14H16" />
