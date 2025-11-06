@@ -3,6 +3,7 @@ import AppHeader from '../appHeader/AppHeader.jsx'
 import Forecast from '../forecast/Forecast.jsx'
 import CurrentWeather from '../currentWeather/CurrentWeather.jsx'
 import TimeWeather from '../timeWeather/TimeWeather.jsx'
+import AppFooter from '../footer/AppFooter.jsx'
 import './App.scss'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <CurrentWeather />
       <TimeWeather />
       <Forecast />
+      <AppFooter />
     </>
   )
 }

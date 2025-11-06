@@ -1,0 +1,120 @@
+.footer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    &__wrapper {
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        flex-flow: column;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    &__top {
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    &__left {
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        flex-flow: column;
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+    }
+
+    &__p2 {
+        color: #ffffff99;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    &__socials {
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        display: flex;
+    }
+
+    &__icon-wrap {
+        border: 1px solid #dbe2eb;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        min-width: 35px;
+        max-width: 35px;
+        min-height: 35px;
+        max-height: 35px;
+        padding: 5px;
+        transition: all .3s;
+        display: flex;
+    }
+
+    &__right {
+        margin-top: 20px;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+    }
+
+    &__links-wrap {
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        flex-flow: column;
+        align-items: flex-start;
+        display: flex;
+    }
+
+    &__link {
+        color: #ffffffcc;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all .3s;
+
+    }
+
+    &__bottom {
+        border-top: 1px solid #ffffff66;
+        padding-top: 20px;
+    }
+
+    &__bottom-content {
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        flex-flow: row;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    &__bottom-right {
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        display: flex;
+    }
+
+    &__bottom-link {
+        color: #ffffffcc;
+        font-size: .875rem;
+        text-decoration: none;
+        transition: all .3s;
+    }
+
+    img {
+        max-width: 100%;
+        display: inline-block;
+    }
+
+}
