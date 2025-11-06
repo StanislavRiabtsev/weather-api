@@ -1,15 +1,24 @@
 import React from "react";
 
-const Snow = ({size}) => {
+const Snow = ({ size = 75 }) => {
 	return (
-		<svg class="snow"
+		<svg
+			className="snow"
 			width={size}
 			height={size}
 			viewBox="0 0 75 75"
-			xmlns="http://www.w3.org/2000/svg">
-			<g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke="#DFDEED" stroke-width="2">
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<g
+				fill="none"
+				fillRule="evenodd"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				stroke="#DFDEED"
+				strokeWidth="2"
+			>
 				<path d="M37 11c5.52 0 10.09 4.066 10.88 9.366A9.5 9.5 0 1 1 50.5 39h-23a7.5 7.5 0 0 1-1.297-14.888A10.972 10.972 0 0 1 26 22c0-6.075 4.925-11 11-11z" />
-				<g class="snow--flakes">
+				<g className="snow--flakes">
 					<g>
 						<path d="M40.33 65.5l-2 3.464" />
 						<path d="M41.062 68.232l-3.464-2" />
@@ -49,7 +58,7 @@ const Snow = ({size}) => {
 				</g>
 			</g>
 		</svg>
-	)
-}
+	);
+};
 
 export default Snow;

@@ -10,70 +10,80 @@ import Sleet from "../icons/Sleet.jsx";
 import Snow from "../icons/Snow.jsx";
 import Wind from "../icons/Wind.jsx";
 
-import './timeWeather.scss';
+import "./timeWeather.scss";
 
 const TimeWeather = () => {
     return (
-        <div class="time-weather">
-            <div class="time-weather__table">
-                <div class="time-weather__body">
-                    <div class="time-weather__row">
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+        <div className="time-weather">
+            <div className="time-weather__table">
+                <div className="time-weather__body">
+                    <div className="time-weather__row">
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <ClearDay />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <Cloudy />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <Fog />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <CloudyDay />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <CloudyNight />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <Rain />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <Sleet />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <Wind />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <Snow />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
-                        <div class="time-weather__cell">
-                            <p class="time-weather__time">Time: 12:00 PM</p>
+
+                        <div className="time-weather__cell">
+                            <p className="time-weather__time">Time: 12:00 PM</p>
                             <Snow />
-                            <p class="time-weather__temp">Temperature: 25°C</p>
+                            <p className="time-weather__temp">Temperature: 25°C</p>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
     );
-}
+};
 
 export default TimeWeather;
