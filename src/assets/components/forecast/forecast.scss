@@ -5,12 +5,7 @@
         margin-top: 3em;
         display: flex;
         flex-direction: row;
-        gap: 1em;
-    }
-
-    &__img {
-        width: 100px;
-        height: 100px;
+        justify-content: space-around;
     }
 
     &__title {
@@ -28,17 +23,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.2);
         padding: 1em;
         border-radius: 8px;
-        width: 170px;
+        width: 180px;
         box-sizing: border-box;
     }
 
     &__temp,
     &__condition {
-        font-size: 0.8em;
-        font-weight: 700;
+        font-size: 16px;
+        font-weight: 400;
         margin: 10px;
     }
 }

@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
+
+import Compass from "../icons/Compass.jsx";
 import ClearDay from "../icons/ClearDay.jsx";
+import ClearNight from "../icons/ClearNight.jsx";
 import Cloudy from "../icons/Cloudy.jsx";
-// import Cloudy from "../icons/Cloudy.jsx";
+import CloudyDay from "../icons/CloudyDay.jsx";
+import CloudyNight from "../icons/CloudyNight.jsx";
 import Fog from "../icons/Fog.jsx";
-import PartlyCloudyDay from "../icons/PartlyCloudyDay.jsx";
-import PartlyCloudyNight from "../icons/PartlyCloudyNight.jsx";
 import Rain from "../icons/Rain.jsx";
 import Sleet from "../icons/Sleet.jsx";
 import Snow from "../icons/Snow.jsx";
+import Thuderstorm from "../icons/Thunderstorm.jsx"
 import Wind from "../icons/Wind.jsx";
-import Compass from "../icons/Compass.jsx";
 
 import './currentWeather.scss';
-import ClearNight from "../icons/ClearNight.jsx";
+
 
 const CurrentWeather = () => {
     return (
@@ -52,13 +54,14 @@ const CurrentWeather = () => {
                     {/* <ClearDay /> */}
                     {/* <ClearNight /> */}
                     {/* <Cloudy /> */}
-                    {/* <Fog /> */}
-                    {/* <PartlyCloudyDay /> */}
-                    {/* <PartlyCloudyNight /> */}
+                    {/* <CloudyDay /> */}
+                    {/* <CloudyNight /> */}
                     {/* <Rain /> */}
                     {/* <Sleet /> */}
-                    <Snow />
-                    {/* <Wind /> */}
+                    {/* <Snow /> */}
+                    {/* <Thuderstorm /> */}
+                    <Wind />
+                    {/* <Fog /> */}
                     <p className="current-weather__temperature">
                         Temperature:
                         <span className="current-weather__temp-value current-weather__temp-value--hot">22°C</span>
