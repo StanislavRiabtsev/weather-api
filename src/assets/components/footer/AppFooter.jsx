@@ -12,16 +12,16 @@ const AppFooter = () => {
                     <div className="footer__left">
                         <p className="footer__p2">Connect people with opportunities that bring more fulfillment to their lives.</p>
                         <div className="footer__socials">
-                            <a href="#" className="footer__icon w-inline-block">
+                            <a href="https://www.facebook.com/profile.php?id=61551848827170" className="footer__icon w-inline-block">
                                 <FontAwesomeIcon icon={faSquareFacebook} className="footer__icon-facebook" />
                             </a>
-                            <a href="#" className="footer__icon w-inline-block">
+                            <a href="https://github.com/StanislavRiabtsev" className="footer__icon w-inline-block">
                                 <FontAwesomeIcon icon={faSquareGithub} className="footer__icon-github" />
                             </a>
-                            <a href="#" className="footer__icon w-inline-block">
+                            <a href="https://www.instagram.com/il_stas_li" className="footer__icon w-inline-block">
                                 <FontAwesomeIcon icon={faSquareInstagram} className="footer__icon-instagram" />
                             </a>
-                            <a href="#" className="footer__icon w-inline-block">
+                            <a href="https://www.linkedin.com/in/stanislav-riabtsev" className="footer__icon w-inline-block">
                                 <FontAwesomeIcon icon={faSquareLinkedin} className="footer__icon-linkedin" />
                             </a>
                         </div>
