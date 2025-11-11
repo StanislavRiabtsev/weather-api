@@ -1,9 +1,12 @@
+@use "/src/assets/style/base/variables.scss" as *;
+
 .current-weather {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 40px;
+    color: $white;
 
     &__title {
         font-size: 2em;
@@ -22,13 +25,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 3px solid rgba(255, 255, 255, 0.2);
+        border: 5px solid $grey;
         padding: 1.5em;
-        border-radius: 8px;
+        border-radius: 15px;
         width: 340px;
         height: 440px;
         box-sizing: border-box;
-        // box-shadow: 0px 0px 24px 2px rgba(255, 255, 255, 0.4);
         margin-top: 20px;
     }
 
@@ -36,9 +38,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 3px solid rgba(255, 255, 255, 0.2);
+        border: 5px solid $grey;
         padding: 1.5em;
-        border-radius: 8px;
+        border-radius: 15px;
         width: 300px;
         box-sizing: border-box;
         margin-top: 40px;
@@ -50,6 +52,7 @@
         font-size: 1.5em;
         margin-top: 0;
         margin-bottom: 20px;
+        color: $white;
     }
 
     &__temperature,
@@ -63,20 +66,7 @@
     &__temp-value {
         font-weight: 700;
         margin-left: 10px;
-
-        &--hot {
-            color: rgba(222, 52, 52, 0.7);
-        }
-
-        &--cold {
-            color: rgba(52, 152, 219, 0.7);
-        }
-    }
-
-    &__condition-text {
-        font-weight: 700;
-        margin-left: 10px;
-        color: #d6ff51;
+        color: $white;
     }
 
     &__stats {
@@ -90,10 +80,15 @@
         display: flex;
         justify-content: space-between;
         font-size: 1.1em;
-        margin: 18px 10px;
+        padding: 13px;
+        color: $white;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($white, 0.2);
+        }
 
         span:first-child {
-            color: rgba(255, 255, 255, 0.7);
+            color: $white;
         }
 
         span:last-child {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./compass.scss";
+import "../../style/ui/compass.scss";
 
 const Compass = () => {
     return (

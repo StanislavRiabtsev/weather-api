@@ -1,6 +1,9 @@
+@use "/src/assets/style/base/variables.scss" as *;
+
 .footer {
     margin-top: 50px;
     margin-bottom: 20px;
+    color: $white;
 
     &__wrapper {
         grid-column-gap: 50px;
@@ -30,7 +33,6 @@
     }
 
     &__p2 {
-        color: #ffffff99;
         font-size: 1rem;
         font-weight: 600;
         text-align: left;
@@ -43,7 +45,7 @@
     }
 
     &__icon {
-        border: 1px solid #dbe2eb;
+        border: 1px solid $white;
         border-radius: 8px;
         justify-content: center;
         align-items: center;
@@ -52,16 +54,52 @@
         min-height: 35px;
         max-height: 35px;
         padding: 5px;
-        transition: all .3s;
         display: flex;
+        background-color: transparent;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: $white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            .footer__icon-facebook {
+                color: #1877F2;
+            }
+
+            .footer__icon-github {
+                color: #181717;
+            }
+
+            .footer__icon-instagram {
+                color: #E4405F;
+            }
+
+            .footer__icon-linkedin {
+                color: #0A66C2;
+            }
+        }
+
+        &:active {
+            transform: translateY(-1px) scale(0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        &:focus {
+            outline: 2px solid #4a90e2;
+            outline-offset: 2px;
+            background-color: $white;
+        }
 
         &-facebook,
         &-github,
         &-instagram,
         &-linkedin {
-            color: #ffffff;
+            color: $white;
             width: 35px;
             height: 35px;
+            transition: color .3s ease-in-out;
         }
     }
 
@@ -87,7 +125,7 @@
     }
 
     &__link {
-        color: #ffffffcc;
+        color: $white;
         font-size: 1rem;
         font-weight: 600;
         text-decoration: none;
@@ -96,7 +134,7 @@
     }
 
     &__bottom {
-        border-top: 1px solid #ffffff66;
+        border-top: 1px solid $grey;
         padding-top: 20px;
     }
 
@@ -108,6 +146,10 @@
         display: flex;
     }
 
+    &__bottom-text {
+        color: $white;
+    }
+
     &__bottom-right {
         grid-column-gap: 16px;
         grid-row-gap: 16px;
@@ -115,7 +157,7 @@
     }
 
     &__bottom-link {
-        color: #ffffffcc;
+        color: $white;
         font-size: .875rem;
         text-decoration: none;
         transition: all .3s;

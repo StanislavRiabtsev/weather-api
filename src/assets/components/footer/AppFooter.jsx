@@ -10,7 +10,7 @@ const AppFooter = () => {
             <div className="footer__wrapper">
                 <div className="footer__top">
                     <div className="footer__left">
-                        <p className="footer__p2">Connect people with opportunities that bring more fulfillment to their lives.</p>
+                        <p className="footer__p2">Weather data powered by The Easiest Weather API</p>
                         <div className="footer__socials">
                             <a href="https://www.facebook.com/profile.php?id=61551848827170" className="footer__icon w-inline-block">
                                 <FontAwesomeIcon icon={faSquareFacebook} className="footer__icon-facebook" />
@@ -29,7 +29,7 @@ const AppFooter = () => {
                 </div>
                 <div className="footer__bottom">
                     <div className="footer__bottom-content">
-                        <div className="text-size-small is-grey">© 2025 Weather App. All rights reserved.</div>
+                        <div className="footer__bottom-text">© 2025 Weather App. All rights reserved.</div>
                         <div className="footer__bottom-right">
                             <a href="#" className="footer__bottom-link">Terms</a>
                             <a href="#" className="footer__bottom-link">Privacy</a>
