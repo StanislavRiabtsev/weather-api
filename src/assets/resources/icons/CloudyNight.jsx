@@ -1,6 +1,7 @@
 import React from "react";
+import "../../style/ui/icons.scss";
 
-const CloudyNight = ({ size = 75 }) => {
+const CloudyNight = ({ size }) => {
     return (
         <svg
             className="cloudy-night"

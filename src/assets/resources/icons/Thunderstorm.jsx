@@ -1,4 +1,5 @@
 import React from "react";
+import "../../style/ui/icons.scss";
 
 const Thunderstorm = ({ size = 75 }) => {
     return (

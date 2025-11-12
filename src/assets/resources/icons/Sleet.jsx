@@ -1,6 +1,7 @@
 import React from "react";
+import "../../style/ui/icons.scss";
 
-const Sleet = ({ size = 75 }) => {
+const Sleet = ({ size }) => {
     return (
         <svg
             className="sleet"

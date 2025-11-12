@@ -1,5 +1,5 @@
 import React from "react";
-import './icons.scss';
+import "../../style/ui/icons.scss";
 
 const ClearDay = ({ size }) => {
     return (

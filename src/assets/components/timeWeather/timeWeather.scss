@@ -1,12 +1,14 @@
+@use "/src/assets/style/variables.scss" as *;
+
 .time-weather {
-    color: rgba(255, 255, 255, 0.87);
+    color: $white;
     font-size: 0.9em;
     margin-top: 40px;
 
     &__table {
         display: table;
         width: 100%;
-        border: 2px solid rgba(255, 255, 255, 0.2);
+        border: 2px solid $grey;
         border-radius: 8px;
         overflow: hidden;
     }
@@ -23,7 +25,7 @@
         display: table-cell;
         padding: 8px;
         text-align: center;
-        border-right: 2px solid rgba(255, 255, 255, 0.2);
+        border-right: 2px solid $grey;
 
         &:last-child {
             border-right: none;

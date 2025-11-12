@@ -1,9 +1,12 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  padding: 0 50px 0 50px;
+  margin: 0 auto;
+  text-align: center;
 
-  color-scheme: light dark;
+  font-family: "Elms Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -11,19 +14,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes animatedSky {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
+  background: linear-gradient(-45deg,
+      #0a1931,
+      #185a9d,
+      #43cea2,
+      #fdbb2d);
 
-  a:hover {
-    color: #747bff;
-  }
+  background-size: 400% 400%;
+
+  animation: animatedSky 30s ease infinite;
 }

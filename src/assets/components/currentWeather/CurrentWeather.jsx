@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import Compass from "../icons/Compass.jsx";
-import ClearDay from "../icons/ClearDay.jsx";
-import ClearNight from "../icons/ClearNight.jsx";
-import Cloudy from "../icons/Cloudy.jsx";
-import CloudyDay from "../icons/CloudyDay.jsx";
-import CloudyNight from "../icons/CloudyNight.jsx";
-import Fog from "../icons/Fog.jsx";
-import Rain from "../icons/Rain.jsx";
-import Sleet from "../icons/Sleet.jsx";
-import Snow from "../icons/Snow.jsx";
-import Thuderstorm from "../icons/Thunderstorm.jsx"
-import Wind from "../icons/Wind.jsx";
+import Compass from "../../resources/icons/Compass.jsx";
+import ClearDay from "../../resources/icons/ClearDay.jsx";
+import ClearNight from "../../resources/icons/ClearNight.jsx";
+import Cloudy from "../../resources/icons/Cloudy.jsx";
+import CloudyDay from "../../resources/icons/CloudyDay.jsx";
+import CloudyNight from "../../resources/icons/CloudyNight.jsx";
+import Fog from "../../resources/icons/Fog.jsx";
+import Rain from "../../resources/icons/Rain.jsx";
+import Sleet from "../../resources/icons/Sleet.jsx";
+import Snow from "../../resources/icons/Snow.jsx";
+import Thuderstorm from "../../resources/icons/Thunderstorm.jsx"
+import Wind from "../../resources/icons/Wind.jsx";
 
 import './currentWeather.scss';
 
@@ -63,12 +63,11 @@ const CurrentWeather = () => {
                     <Wind />
                     {/* <Fog /> */}
                     <p className="current-weather__temperature">
-                        Temperature:
-                        <span className="current-weather__temp-value current-weather__temp-value--hot">22°C</span>
+                        Temperature: 22°C
                     </p>
                     <p className="current-weather__condition">
                         Condition:
-                        <span className="current-weather__condition-text">Partly Cloudy</span>
+                        Partly Cloudy
                     </p>
                 </div>
                 <div className="current-weather__secondary">
