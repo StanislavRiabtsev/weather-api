@@ -13,10 +13,30 @@ import Snow from "../../resources/icons/Snow.jsx";
 import Thuderstorm from "../../resources/icons/Thunderstorm.jsx"
 import Wind from "../../resources/icons/Wind.jsx";
 
+import useWeatherService from "../../services/WeatherService.jsx";
+
 import './currentWeather.scss';
 
 
-const CurrentWeather = () => {
+const CurrentWeather = (props) => {
+    const [weather, setWeather] = useState(null);
+    const { process, getPoznanWeather, setProcess } = useWeatherService();
+
+    useEffect(() => {
+        onRequest();
+    }, []);
+
+    const onRequest = () => {
+        getPoznanWeather()
+            .then(data => {
+                setWeather(data);
+                setProcess('confirmed');
+            })
+            .catch(err => console.error("Error loading weather:", err));
+    };
+
+    if (!weather) return <p>Loading...</p>;
+
     return (
         <div className="current-weather">
             <h2 className="current-weather__title">Current Weather</h2>
@@ -26,7 +46,7 @@ const CurrentWeather = () => {
                     <ul className="current-weather__stats">
                         <li className="current-weather__stat">
                             <span>Feels like:</span>
-                            <span>10°C</span>
+                            <span>{weather.feelslike}</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>Rain:</span>
@@ -34,19 +54,19 @@ const CurrentWeather = () => {
                         </li>
                         <li className="current-weather__stat">
                             <span>Wind speed:</span>
-                            <span>10 km/h</span>
+                            <span>{weather.windspeed}</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>Humidity:</span>
-                            <span>50%</span>
+                            <span>{weather.humidity}</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>Visibility:</span>
-                            <span>10 km</span>
+                            <span>{weather.visibility}</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>UV Index:</span>
-                            <span>5</span>
+                            <span>{weather.uvindex}</span>
                         </li>
                     </ul>
                 </div>
