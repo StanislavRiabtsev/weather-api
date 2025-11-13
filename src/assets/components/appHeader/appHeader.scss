@@ -29,35 +29,37 @@
         button {
             margin: 0;
             padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            background: $white;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            border: 2px solid rgb(255, 255, 255);
-
-            transition: border-color 0.3s ease,
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+            border: 1px solid $white;
+            transition: all .3s ease-in-out;
 
             &:hover {
-                border-color: rgb(127, 127, 127);
+                background-color: $white;
                 transform: translateY(-3px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                -webkit-background-clip: initial;
+                background-clip: initial;
+                color: #333;
             }
 
             &:active {
-                transform: translateY(-1px) scale(0.98);
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-                filter: brightness(0.9);
+                transform: translateY(-1px) scale(0.95);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                filter: brightness(0.95);
             }
 
             &:focus {
-                outline: none;
-                border-color: #4a90e2;
-                box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+                outline: 2px solid #4a90e2;
+                outline-offset: 2px;
+                background-color: $white;
+                -webkit-background-clip: initial;
+                background-clip: initial;
+                color: #333;
             }
 
             &.active {
@@ -67,14 +69,14 @@
                 color: #333333;
                 border-color: $white;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                transform: translateY(-2px);
+                transform: translateY(-3px);
             }
 
             &.active:hover {
                 background: $white;
-                border-color: $white;
                 color: #000;
                 transform: translateY(-3px);
+                filter: brightness(0.95);
             }
         }
     }
