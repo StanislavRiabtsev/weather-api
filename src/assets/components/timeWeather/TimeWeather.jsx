@@ -13,6 +13,8 @@ import Wind from "../../resources/icons/Wind.jsx";
 import "./timeWeather.scss";
 
 const TimeWeather = () => {
+
+
     return (
         <div className="time-weather">
             <div className="time-weather__table">
