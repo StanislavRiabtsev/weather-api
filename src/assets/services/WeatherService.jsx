@@ -12,26 +12,26 @@ const useWeatherService = () => {
         return transformed;
     };
 
-    const getTimeWeather = async (hours) => {
-        const res = await request(`${_apiBase}${hours}?unitGroup=metric&${_apiKey}`);
+    const getTimeWeather = async (address = 'Poznan,PL', hours = 'next10hours') => {
+        const res = await request(`${_apiBase}${address}/${hours}?unitGroup=metric&${_apiKey}`);
         const transformed = _transformTimeWeather(res);
         return transformed;
     };
 
     const _transformTimeWeather = (data) => {
-        const today = data.days[0];
-        return {
-            time: today.datetime,
-            temperature: today.temp,
-            condition: today.conditions,
-        }
-    }
+        return data.days[0].hours
+            .slice(0, 10)
+            .map(hour => ({
+                time: hour.datetime.slice(0, 5),
+                temperature: hour.temp,
+                condition: hour.conditions,
+            }));
+    };
 
 
     const _transformWeather = (data) => {
         const today = data.days[0];
         return {
-            address: data.resolvedAddress,
             feelslike: today.feelslike,
             rain: today.precip,
             windspeed: today.windspeed,
