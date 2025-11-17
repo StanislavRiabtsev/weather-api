@@ -11,9 +11,9 @@ const AppHeader = () => {
                 <h1 className="header__title">Weather App</h1>
             </div>
             <div className="header__languages">
-                <button data-language="english">ENGLISH</button>
-                <button data-language="italian">POLSKI</button>
-                <button data-language="spanish">УКРАЇНСЬКА</button>
+                <button data-language="english" className="header__languages-btn">ENGLISH</button>
+                <button data-language="italian" className="header__languages-btn">POLSKI</button>
+                <button data-language="spanish" className="header__languages-btn">УКРАЇНСЬКА</button>
             </div>
         </header>
     );

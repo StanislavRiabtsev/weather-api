@@ -13,10 +13,51 @@ import Snow from "../../resources/icons/Snow.jsx";
 import Thuderstorm from "../../resources/icons/Thunderstorm.jsx"
 import Wind from "../../resources/icons/Wind.jsx";
 
+import useWeatherService from "../../services/WeatherService.jsx";
+
 import './currentWeather.scss';
 
+const iconMap = {
+    "Clear": <ClearDay />,
+    "Clear day": <ClearDay />,
+    "Clear night": <ClearNight />,
+    "Partially cloudy": <CloudyDay />,
+    "Partly cloudy": <CloudyDay />,
+    "Cloudy": <Cloudy />,
+    "Overcast": <Cloudy />,
+    "Rain": <Rain />,
+    "Rain, Partially cloudy": <Rain />,
+    "Rain, Overcast": <Rain />,
+    "Fog": <Fog />,
+    "Snow": <Snow />,
+    "Sleet": <Sleet />,
+    "Thunderstorm": <Thuderstorm />,
+    "Wind": <Wind />,
+};
 
-const CurrentWeather = () => {
+const getWeatherIcon = (condition) => {
+    return iconMap[condition] || <Cloudy />;
+};
+
+const CurrentWeather = (props) => {
+    const [weather, setWeather] = useState(null);
+    const { process, getPoznanWeather, setProcess } = useWeatherService();
+
+    useEffect(() => {
+        onRequest();
+    }, []);
+
+    const onRequest = () => {
+        getPoznanWeather()
+            .then(data => {
+                setWeather(data);
+                setProcess('confirmed');
+            })
+            .catch(err => console.error("Error loading weather:", err));
+    };
+
+    if (!weather) return <span className="current-weather__subtitle">Loading...</span>;
+
     return (
         <div className="current-weather">
             <h2 className="current-weather__title">Current Weather</h2>
@@ -26,48 +67,37 @@ const CurrentWeather = () => {
                     <ul className="current-weather__stats">
                         <li className="current-weather__stat">
                             <span>Feels like:</span>
-                            <span>10°C</span>
+                            <span>{weather.feelslike} °C</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>Rain:</span>
-                            <span>20%</span>
+                            <span>{weather.rain}%</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>Wind speed:</span>
-                            <span>10 km/h</span>
+                            <span>{weather.windspeed} km/h</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>Humidity:</span>
-                            <span>50%</span>
+                            <span>{weather.humidity}%</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>Visibility:</span>
-                            <span>10 km</span>
+                            <span>{weather.visibility} km</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>UV Index:</span>
-                            <span>5</span>
+                            <span>{weather.uvindex}</span>
                         </li>
                     </ul>
                 </div>
                 <div className="current-weather__primary">
-                    {/* <ClearDay /> */}
-                    {/* <ClearNight /> */}
-                    {/* <Cloudy /> */}
-                    {/* <CloudyDay /> */}
-                    {/* <CloudyNight /> */}
-                    {/* <Rain /> */}
-                    {/* <Sleet /> */}
-                    {/* <Snow /> */}
-                    {/* <Thuderstorm /> */}
-                    <Wind />
-                    {/* <Fog /> */}
+                    {getWeatherIcon(weather.condition)}
                     <p className="current-weather__temperature">
-                        Temperature: 22°C
+                        Temperature: {weather.temperature} °C
                     </p>
                     <p className="current-weather__condition">
-                        Condition:
-                        Partly Cloudy
+                        Condition: {weather.condition}
                     </p>
                 </div>
                 <div className="current-weather__secondary">

@@ -1,17 +1,14 @@
 import React from "react";
 
-import ClearDay from "../icons/ClearDay.jsx";
-import ClearNight from "../icons/ClearNight.jsx";
-import Cloudy from "../icons/Cloudy.jsx";
-import CloudyDay from "../icons/CloudyDay.jsx";
-import CloudyNight from "../icons/CloudyNight.jsx";
-import Fog from "../icons/Fog.jsx";
-import Rain from "../icons/Rain.jsx";
-import Sleet from "../icons/Sleet.jsx";
-import Snow from "../icons/Snow.jsx";
-import Thuderstorm from "../icons/Thunderstorm.jsx"
-import Wind from "../icons/Wind.jsx";
-
+import ClearDay from "../../resources/icons/ClearDay.jsx";
+import Cloudy from "../../resources/icons/Cloudy.jsx";
+import Fog from "../../resources/icons/Fog.jsx";
+import CloudyDay from "../../resources/icons/CloudyDay.jsx";
+import CloudyNight from "../../resources/icons/CloudyNight.jsx";
+import Rain from "../../resources/icons/Rain.jsx";
+import Sleet from "../../resources/icons/Sleet.jsx";
+import Snow from "../../resources/icons/Snow.jsx";
+import Wind from "../../resources/icons/Wind.jsx";
 
 import './forecast.scss';
 
