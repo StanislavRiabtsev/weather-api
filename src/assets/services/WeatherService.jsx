@@ -24,8 +24,6 @@ const useWeatherService = () => {
         return transformed;
     };
 
-
-
     const _transformTimeWeather = (data) => {
 
         const formatter = new Intl.DateTimeFormat("en-US", {
@@ -63,30 +61,61 @@ const useWeatherService = () => {
 
         return result.map(hour => ({
             time: hour.datetime.slice(0, 5),
-            temperature: hour.temp,
+            temperature: Math.round(hour.temp),
             condition: hour.conditions,
         }));
     };
 
     const _transformForecastWeather = (data) => {
-        const todays = data.days[0];
-        return hoursTomorrow.slice(0, 10).map(hour => ({
-            day: todays.datetime,
-            temperature: todays.temp,
-            condition: todays.conditions,
-        }));
-    }
+        const now = new Date();
+
+        const weekday = new Intl.DateTimeFormat("en-US", {
+            weekday: "long",
+            timeZone: "Europe/Warsaw"
+        }).format(now);
+
+        const day = new Intl.DateTimeFormat("en-US", {
+            day: "2-digit",
+            month: "2-digit",
+            timeZone: "Europe/Warsaw"
+        }).format(now).replace("/", ".");
+
+        const todayLabel = `${weekday} ${day}`;
+
+        const days = data.days.slice(1, 8);
+
+        return days.map(d => {
+            const dateObj = new Date(d.datetime);
+
+            const weekdayStr = new Intl.DateTimeFormat("en-US", {
+                weekday: "long",
+                timeZone: "Europe/Warsaw"
+            }).format(dateObj);
+
+            const dateStr = new Intl.DateTimeFormat("en-GB", {
+                day: "2-digit",
+                month: "2-digit",
+                timeZone: "Europe/Warsaw"
+            }).format(dateObj).replace("/", ".");
+
+            return {
+                day: `${weekdayStr} ${dateStr}`,
+                temperature: Math.round(d.temp),
+                condition: d.conditions
+            };
+        });
+    };
 
     const _transformWeather = (data) => {
         const today = data.days[0];
         return {
-            feelslike: today.feelslike,
+            feelslike: Math.round(today.feelslike),
             rain: today.precip,
             windspeed: today.windspeed,
             humidity: today.humidity,
             visibility: today.visibility,
             uvindex: today.uvindex,
-            temperature: today.temp,
+            temperature: Math.round(today.temp),
             condition: today.conditions,
         }
     }
