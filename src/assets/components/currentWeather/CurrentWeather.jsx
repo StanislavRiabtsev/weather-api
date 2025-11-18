@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
-
-import Compass from "../../resources/icons/Compass.jsx"
+import React, { useState, useEffect } from "react";
+import Compass from "../../resources/icons/Compass.jsx";
 import GetWeatherIcon from "../iconMap/IconMap.jsx";
 import useWeatherService from "../../services/WeatherService.jsx";
-
+import { useTranslation } from 'react-i18next';
 import './currentWeather.scss';
 
-
-const CurrentWeather = (props) => {
+const CurrentWeather = () => {
+    const { t } = useTranslation();
     const [weather, setWeather] = useState(null);
     const { process, getPoznanWeather, setProcess } = useWeatherService();
 
@@ -24,54 +23,58 @@ const CurrentWeather = (props) => {
             .catch(err => console.error("Error loading weather:", err));
     };
 
-    if (!weather) return <span className="current-weather__subtitle">Loading...</span>;
+    if (!weather) return <span className="current-weather__subtitle">{t('loading')}</span>;
 
     return (
         <div className="current-weather">
-            <h2 className="current-weather__title">Current Weather</h2>
+            <h2 className="current-weather__title">{t('current')}</h2>
             <div className="current-weather__wrapper">
+
                 <div className="current-weather__secondary">
-                    <h3 className="current-weather__subtitle">About now</h3>
+                    <h3 className="current-weather__subtitle">{t('about')}</h3>
                     <ul className="current-weather__stats">
                         <li className="current-weather__stat">
-                            <span>Feels like:</span>
+                            <span>{t('feel')}:</span>
                             <span>{weather.feelslike} °C</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Rain:</span>
+                            <span>{t('rain')}:</span>
                             <span>{weather.rain}%</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Wind speed:</span>
+                            <span>{t('windspeed')}:</span>
                             <span>{weather.windspeed} km/h</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Humidity:</span>
+                            <span>{t('humidity')}:</span>
                             <span>{weather.humidity}%</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Visibility:</span>
+                            <span>{t('visibility')}:</span>
                             <span>{weather.visibility} km</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>UV Index:</span>
+                            <span>{t('index')}:</span>
                             <span>{weather.uvindex}</span>
                         </li>
                     </ul>
                 </div>
+
                 <div className="current-weather__primary">
                     <GetWeatherIcon />
                     <p className="current-weather__temperature">
-                        Temperature: {weather.temperature} °C
+                        {t('temperature')}: {weather.temperature} °C
                     </p>
                     <p className="current-weather__condition">
-                        Condition: {weather.condition}
+                        {t('condition')}: {weather.condition}
                     </p>
                 </div>
+
                 <div className="current-weather__secondary">
-                    <h3 className="current-weather__subtitle">Wind</h3>
+                    <h3 className="current-weather__subtitle">{t('wind')}</h3>
                     <Compass />
                 </div>
+
             </div>
         </div>
     );

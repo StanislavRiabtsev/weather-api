@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import GetWeatherIcon from "../iconMap/IconMap.jsx";
 import useWeatherService from "../../services/WeatherService.jsx";
+import { useTranslation } from 'react-i18next';
 
 import './forecast.scss';
 
 const Forecast = () => {
+    const { t } = useTranslation();
     const [days, setDays] = useState([]);
     const { getForecastWeather, setProcess } = useWeatherService();
 
@@ -19,11 +21,11 @@ const Forecast = () => {
     }, []);
 
     if (days.length === 0)
-        return <span className="current-weather__subtitle">Loading...</span>;
+        return <span className="current-weather__subtitle">{t('loading')}</span>;
 
     return (
         <div className="forecast">
-            <h2 className="forecast__title">Forecast</h2>
+            <h2 className="forecast__title">{t('forecast')}</h2>
             <div className="forecast__wrapper">
 
                 {days.map((day, index) => (
@@ -32,10 +34,10 @@ const Forecast = () => {
                             <p className="forecast__day">{day.day}</p>
                             <GetWeatherIcon />
                             <p className="forecast__temp">
-                                Temperature: {day.temperature}°C
+                                {t('temperature')}: {day.temperature}°C
                             </p>
                             <p className="forecast__condition">
-                                Condition: {day.condition}
+                                {t('condition')}: {day.condition}
                             </p>
                         </div>
                     </div>

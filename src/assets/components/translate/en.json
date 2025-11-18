@@ -1,0 +1,17 @@
+{
+    "current": "Current Weather",
+    "about": "About now",
+    "feel": "Feels like",
+    "rain": "Rain",
+    "windspeed": "Wind speed",
+    "humidity": "Humidity",
+    "visibility": "Visibility",
+    "index": "UV Index",
+    "temperature": "Temperature",
+    "condition": "Condition",
+    "wind": "Wind",
+    "time": "Time",
+    "forecast": "Forecast",
+    "weather": "Weather data powered by The Easiest Weather API",
+    "loading": "Loading..."
+}

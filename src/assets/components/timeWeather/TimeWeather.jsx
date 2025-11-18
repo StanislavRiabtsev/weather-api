@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import GetWeatherIcon from "../iconMap/IconMap.jsx";
 import useWeatherService from "../../services/WeatherService.jsx";
+import { useTranslation } from 'react-i18next';
 
 import "./timeWeather.scss";
 
 const TimeWeather = () => {
 
+    const { t } = useTranslation();
     const [hours, setHours] = useState([]);
     const { getTimeWeather, setProcess } = useWeatherService();
 
@@ -20,7 +22,7 @@ const TimeWeather = () => {
     }, []);
 
     if (hours.length === 0)
-        return <span className="current-weather__subtitle">Loading...</span>;
+        return <span className="current-weather__subtitle">{t('loading')}</span>;
 
     return (
         <div className="time-weather">
@@ -31,11 +33,11 @@ const TimeWeather = () => {
                         {hours.map((hour, index) => (
                             <div key={index} className="time-weather__cell">
                                 <p className="time-weather__time">
-                                    Time: {hour.time}
+                                    {t('time')}: {hour.time}
                                 </p>
-                                    <GetWeatherIcon />
+                                <GetWeatherIcon />
                                 <p className="time-weather__temp">
-                                    Temperature: {hour.temperature}°C
+                                    {t('temperature')}: {hour.temperature}°C
                                 </p>
                             </div>
                         ))}

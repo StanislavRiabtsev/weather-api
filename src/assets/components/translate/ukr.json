@@ -1,0 +1,17 @@
+{
+    "current": "Поточна погода",
+    "about": "Зараз",
+    "feel": "Відчувається як",
+    "rain": "Опади",
+    "windspeed": "Швидкість вітру",
+    "humidity": "Вологість",
+    "visibility": "Видимість",
+    "index": "Індекс UV",
+    "temperature": "Температура",
+    "condition": "Стан погоди",
+    "wind": "Вітер",
+    "time": "Час",
+    "forecast": "Прогноз",
+    "weather": "Дані про погоду надано The Easiest Weather API",
+    "loading": "Завантаження..."
+}
