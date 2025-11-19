@@ -1,4 +1,7 @@
 import { useHttp } from "../hooks/http.hook";
+import { translateCondition } from "../components/translate/TranslateCondition";
+import i18n from "../components/translate/i18n";
+
 
 const useWeatherService = () => {
     const { request, clearError, process, setProcess } = useHttp();
@@ -50,7 +53,7 @@ const useWeatherService = () => {
             return hoursTomorrow.slice(0, 10).map(hour => ({
                 time: hour.datetime.slice(0, 5),
                 temperature: hour.temp,
-                condition: hour.conditions,
+                condition: translateCondition(hour.conditions, i18n.language)
             }));
         }
 
@@ -62,17 +65,17 @@ const useWeatherService = () => {
         return result.map(hour => ({
             time: hour.datetime.slice(0, 5),
             temperature: Math.round(hour.temp),
-            condition: hour.conditions,
+            condition: translateCondition(hour.conditions, i18n.language),
         }));
     };
 
     const _transformForecastWeather = (data) => {
         const now = new Date();
 
-        const weekday = new Intl.DateTimeFormat("en-US", {
-            weekday: "long",
-            timeZone: "Europe/Warsaw"
-        }).format(now);
+        const weekday = new Intl.DateTimeFormat(
+            i18n.language === 'pl' ? 'pl-PL' : i18n.language === 'ukr' ? 'uk-UA' : 'en-US',
+            { weekday: 'long', timeZone: 'Europe/Warsaw' }
+        ).format(now);
 
         const day = new Intl.DateTimeFormat("en-US", {
             day: "2-digit",
@@ -101,7 +104,7 @@ const useWeatherService = () => {
             return {
                 day: `${weekdayStr} ${dateStr}`,
                 temperature: Math.round(d.temp),
-                condition: d.conditions
+                condition: translateCondition(d.conditions, i18n.language)
             };
         });
     };
@@ -116,7 +119,7 @@ const useWeatherService = () => {
             visibility: today.visibility,
             uvindex: today.uvindex,
             temperature: Math.round(today.temp),
-            condition: today.conditions,
+            condition: translateCondition(today.conditions, i18n.language)
         }
     }
 

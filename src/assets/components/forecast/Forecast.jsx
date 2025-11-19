@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import GetWeatherIcon from "../iconMap/IconMap.jsx";
 import useWeatherService from "../../services/WeatherService.jsx";
 import { useTranslation } from 'react-i18next';
+import { translateCondition } from "../translate/TranslateCondition.jsx";
 
 import './forecast.scss';
 
 const Forecast = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [days, setDays] = useState([]);
     const { getForecastWeather, setProcess } = useWeatherService();
 
@@ -37,7 +38,7 @@ const Forecast = () => {
                                 {t('temperature')}: {day.temperature}°C
                             </p>
                             <p className="forecast__condition">
-                                {t('condition')}: {day.condition}
+                                {t('condition')}: {translateCondition(day.condition, i18n.language)}
                             </p>
                         </div>
                     </div>

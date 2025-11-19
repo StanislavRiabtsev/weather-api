@@ -3,10 +3,11 @@ import Compass from "../../resources/icons/Compass.jsx";
 import GetWeatherIcon from "../iconMap/IconMap.jsx";
 import useWeatherService from "../../services/WeatherService.jsx";
 import { useTranslation } from 'react-i18next';
+import { translateCondition } from "../translate/TranslateCondition.jsx";
 import './currentWeather.scss';
 
 const CurrentWeather = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [weather, setWeather] = useState(null);
     const { process, getPoznanWeather, setProcess } = useWeatherService();
 
@@ -66,7 +67,7 @@ const CurrentWeather = () => {
                         {t('temperature')}: {weather.temperature} °C
                     </p>
                     <p className="current-weather__condition">
-                        {t('condition')}: {weather.condition}
+                        {t('condition')}: {translateCondition(weather.condition, i18n.language)}
                     </p>
                 </div>
 

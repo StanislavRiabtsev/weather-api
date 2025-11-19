@@ -1,16 +1,18 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareFacebook, faSquareGithub, faSquareInstagram, faSquareLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from 'react-i18next';
 
 import './appFooter.scss'
 
 const AppFooter = () => {
+    const { t } = useTranslation();
     return (
         <footer className="footer">
             <div className="footer__wrapper">
                 <div className="footer__top">
                     <div className="footer__left">
-                        <p className="footer__p2">Weather data powered by The Easiest Weather API</p>
+                        <p className="footer__p2">{t('weather')}</p>
                         <div className="footer__socials">
                             <a href="https://www.facebook.com/profile.php?id=61551848827170" className="footer__icon w-inline-block">
                                 <FontAwesomeIcon icon={faSquareFacebook} className="footer__icon-facebook" />

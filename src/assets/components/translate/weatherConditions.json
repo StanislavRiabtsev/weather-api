@@ -1,0 +1,29 @@
+{
+  "en": {
+    "Clear": "Clear",
+    "Cloudy": "Cloudy",
+    "Rain": "Rain",
+    "Snow": "Snow",
+    "Thunderstorm": "Thunderstorm",
+    "Fog": "Fog",
+    "Sleet": "Sleet"
+  },
+  "pl": {
+    "Clear": "Słonecznie",
+    "Cloudy": "Pochmurno",
+    "Rain": "Deszcz",
+    "Snow": "Śnieg",
+    "Thunderstorm": "Burza",
+    "Fog": "Mgła",
+    "Sleet": "Deszcz ze śniegiem"
+  },
+  "ukr": {
+    "Clear": "Ясно",
+    "Cloudy": "Хмарно",
+    "Rain": "Дощ",
+    "Snow": "Сніг",
+    "Thunderstorm": "Гроза",
+    "Fog": "Туман",
+    "Sleet": "Дощ зі снігом"
+  }
+}
