@@ -13,5 +13,7 @@
     "time": "Час",
     "forecast": "Прогноз",
     "weather": "Дані про погоду надано The Easiest Weather API",
-    "loading": "Завантаження..."
+    "loading": "Завантаження...",
+    "kmh": "км/год",
+    "km": "км"
 }

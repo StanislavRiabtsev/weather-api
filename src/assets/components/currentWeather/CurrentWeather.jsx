@@ -44,7 +44,7 @@ const CurrentWeather = () => {
                         </li>
                         <li className="current-weather__stat">
                             <span>{t('windspeed')}:</span>
-                            <span>{weather.windspeed} km/h</span>
+                            <span>{weather.windspeed} {t('kmh')}</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>{t('humidity')}:</span>
@@ -52,7 +52,7 @@ const CurrentWeather = () => {
                         </li>
                         <li className="current-weather__stat">
                             <span>{t('visibility')}:</span>
-                            <span>{weather.visibility} km</span>
+                            <span>{weather.visibility} {t('km')}</span>
                         </li>
                         <li className="current-weather__stat">
                             <span>{t('index')}:</span>

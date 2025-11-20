@@ -13,5 +13,7 @@
     "time": "Time",
     "forecast": "Forecast",
     "weather": "Weather data powered by The Easiest Weather API",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "kmh": "km/h",
+    "km": "km"
 }

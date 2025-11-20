@@ -1,4 +1,4 @@
-import weatherConditions from './weatherConditions.json';
+import weatherConditions from './json/weatherConditions.json';
 import i18n from './i18n';
 
 export const translateCondition = (condition, lang) => {
