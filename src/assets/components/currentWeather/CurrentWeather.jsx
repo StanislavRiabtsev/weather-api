@@ -1,45 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
-
+import React, { useState, useEffect } from "react";
 import Compass from "../../resources/icons/Compass.jsx";
-import ClearDay from "../../resources/icons/ClearDay.jsx";
-import ClearNight from "../../resources/icons/ClearNight.jsx";
-import Cloudy from "../../resources/icons/Cloudy.jsx";
-import CloudyDay from "../../resources/icons/CloudyDay.jsx";
-import CloudyNight from "../../resources/icons/CloudyNight.jsx";
-import Fog from "../../resources/icons/Fog.jsx";
-import Rain from "../../resources/icons/Rain.jsx";
-import Sleet from "../../resources/icons/Sleet.jsx";
-import Snow from "../../resources/icons/Snow.jsx";
-import Thuderstorm from "../../resources/icons/Thunderstorm.jsx"
-import Wind from "../../resources/icons/Wind.jsx";
-
+import GetWeatherIcon from "../iconMap/IconMap.jsx";
 import useWeatherService from "../../services/WeatherService.jsx";
-
+import { useTranslation } from 'react-i18next';
+import { translateCondition } from "../translate/TranslateCondition.jsx";
 import './currentWeather.scss';
 
-const iconMap = {
-    "Clear": <ClearDay />,
-    "Clear day": <ClearDay />,
-    "Clear night": <ClearNight />,
-    "Partially cloudy": <CloudyDay />,
-    "Partly cloudy": <CloudyDay />,
-    "Cloudy": <Cloudy />,
-    "Overcast": <Cloudy />,
-    "Rain": <Rain />,
-    "Rain, Partially cloudy": <Rain />,
-    "Rain, Overcast": <Rain />,
-    "Fog": <Fog />,
-    "Snow": <Snow />,
-    "Sleet": <Sleet />,
-    "Thunderstorm": <Thuderstorm />,
-    "Wind": <Wind />,
-};
-
-const getWeatherIcon = (condition) => {
-    return iconMap[condition] || <Cloudy />;
-};
-
-const CurrentWeather = (props) => {
+const CurrentWeather = () => {
+    const { t, i18n } = useTranslation();
     const [weather, setWeather] = useState(null);
     const { process, getPoznanWeather, setProcess } = useWeatherService();
 
@@ -56,54 +24,58 @@ const CurrentWeather = (props) => {
             .catch(err => console.error("Error loading weather:", err));
     };
 
-    if (!weather) return <span className="current-weather__subtitle">Loading...</span>;
+    if (!weather) return <span className="current-weather__subtitle">{t('loading')}</span>;
 
     return (
         <div className="current-weather">
-            <h2 className="current-weather__title">Current Weather</h2>
+            <h2 className="current-weather__title">{t('current')}</h2>
             <div className="current-weather__wrapper">
+
                 <div className="current-weather__secondary">
-                    <h3 className="current-weather__subtitle">About now</h3>
+                    <h3 className="current-weather__subtitle">{t('about')}</h3>
                     <ul className="current-weather__stats">
                         <li className="current-weather__stat">
-                            <span>Feels like:</span>
+                            <span>{t('feel')}:</span>
                             <span>{weather.feelslike} °C</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Rain:</span>
+                            <span>{t('rain')}:</span>
                             <span>{weather.rain}%</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Wind speed:</span>
-                            <span>{weather.windspeed} km/h</span>
+                            <span>{t('windspeed')}:</span>
+                            <span>{weather.windspeed} {t('kmh')}</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Humidity:</span>
+                            <span>{t('humidity')}:</span>
                             <span>{weather.humidity}%</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>Visibility:</span>
-                            <span>{weather.visibility} km</span>
+                            <span>{t('visibility')}:</span>
+                            <span>{weather.visibility} {t('km')}</span>
                         </li>
                         <li className="current-weather__stat">
-                            <span>UV Index:</span>
+                            <span>{t('index')}:</span>
                             <span>{weather.uvindex}</span>
                         </li>
                     </ul>
                 </div>
+
                 <div className="current-weather__primary">
-                    {getWeatherIcon(weather.condition)}
+                    <GetWeatherIcon />
                     <p className="current-weather__temperature">
-                        Temperature: {weather.temperature} °C
+                        {t('temperature')}: {weather.temperature} °C
                     </p>
                     <p className="current-weather__condition">
-                        Condition: {weather.condition}
+                        {t('condition')}: {translateCondition(weather.condition, i18n.language)}
                     </p>
                 </div>
+
                 <div className="current-weather__secondary">
-                    <h3 className="current-weather__subtitle">Wind</h3>
+                    <h3 className="current-weather__subtitle">{t('wind')}</h3>
                     <Compass />
                 </div>
+
             </div>
         </div>
     );

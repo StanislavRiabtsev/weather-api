@@ -1,0 +1,19 @@
+{
+    "current": "Aktualna pogoda",
+    "about": "Teraz",
+    "feel": "Odczuwalna",
+    "rain": "Opady",
+    "windspeed": "Prędkość wiatru",
+    "humidity": "Wilgotność",
+    "visibility": "Widoczność",
+    "index": "Indeks UV",
+    "temperature": "Temperatura",
+    "condition": "Warunki",
+    "wind": "Wiatr",
+    "time": "Czas",
+    "forecast": "Prognoza",
+    "weather": "Dane pogodowe dostarczone przez The Easiest Weather API",
+    "loading": "Ładowanie...",
+    "kmh": "km/h",
+    "km": "km"
+}
