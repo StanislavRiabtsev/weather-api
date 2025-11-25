@@ -32,7 +32,7 @@ const Forecast = () => {
                 {days.map((day, index) => (
                     <div className="forecast__details" key={index}>
                         <div className="forecast__border">
-                            <p className="forecast__day">{day.day}</p>
+                            <p className="forecast__day">{translateCondition(day.day, i18n.language)}</p>
                             <GetWeatherIcon />
                             <p className="forecast__temp">
                                 {t('temperature')}: {day.temperature}°C

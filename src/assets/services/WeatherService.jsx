@@ -102,7 +102,7 @@ const useWeatherService = () => {
             }).format(dateObj).replace("/", ".");
 
             return {
-                day: `${weekdayStr} ${dateStr}`,
+                day: translateCondition(`${weekdayStr} ${dateStr}`, i18n.language),
                 temperature: Math.round(d.temp),
                 condition: translateCondition(d.conditions, i18n.language)
             };
