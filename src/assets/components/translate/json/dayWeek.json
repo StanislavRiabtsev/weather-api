@@ -6,7 +6,14 @@
         "Thursday": "Thursday",
         "Friday": "Friday",
         "Saturday": "Saturday",
-        "Sunday": "Sunday"
+        "Sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
     },
     "pl": {
         "Monday": "Poniedziałek",
@@ -15,7 +22,14 @@
         "Thursday": "Czwartek",
         "Friday": "Piątek",
         "Saturday": "Sobota",
-        "Sunday": "Niedziela"
+        "Sunday": "Niedziela",
+        "monday": "Poniedziałek",
+        "tuesday": "Wtorek",
+        "wednesday": "Środa",
+        "thursday": "Czwartek",
+        "friday": "Piątek",
+        "saturday": "Sobota",
+        "sunday": "Неділя"
     },
     "ukr": {
         "Monday": "Понеділок",
@@ -24,6 +38,13 @@
         "Thursday": "Четвер",
         "Friday": "П'ятниця",
         "Saturday": "Субота",
-        "Sunday": "Неділя"
+        "Sunday": "Неділя",
+        "monday": "Понеділок",
+        "tuesday": "Вівторок",
+        "wednesday": "Середа",
+        "thursday": "Четвер",
+        "friday": "П'ятниця",
+        "saturday": "Субота",
+        "sunday": "Неділя"
     }
 }

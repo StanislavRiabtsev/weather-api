@@ -1,5 +1,6 @@
 import { useHttp } from "../hooks/http.hook";
 import { translateCondition } from "../components/translate/TranslateCondition";
+import { translateDay } from "../components/translate/TranslateDay";
 import i18n from "../components/translate/i18n";
 
 
