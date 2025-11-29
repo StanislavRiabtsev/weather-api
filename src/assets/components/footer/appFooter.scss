@@ -158,7 +158,7 @@
 
     &__bottom-link {
         color: $white;
-        font-size: .875rem;
+        font-size: 14px;
         text-decoration: none;
         transition: all .3s;
     }
@@ -167,5 +167,38 @@
         max-width: 100%;
         display: inline-block;
     }
+}
 
+@media screen and (max-width: 1200px) {
+    .footer {
+        &__p2 {
+            font-size: 16px;
+        }
+
+        &__socials {
+            grid-column-gap: 24px;
+            grid-row-gap: 24px;
+            display: flex;
+        }
+
+        &__icon {
+            padding: 0px;
+
+            &-facebook,
+            &-github,
+            &-instagram,
+            &-linkedin {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        &__bottom-text {
+            font-size: 12px;
+        }
+
+        &__bottom-link {
+            font-size: 12px;
+        }
+    }
 }
