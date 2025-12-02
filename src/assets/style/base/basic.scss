@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    text-align: center;
+    box-sizing: border-box;
+
+    font-family: "Elms Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes animatedSky {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#root {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+
+    background: linear-gradient(-45deg,
+            #0a1931,
+            #185a9d,
+            #43cea2,
+            #fdbb2d);
+
+    background-size: 400% 400%;
+
+    animation: animatedSky 30s ease infinite;
+}
+
+@media screen and (max-width: 1440px) {
+    #root {
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: 1200px) {}

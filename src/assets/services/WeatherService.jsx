@@ -1,5 +1,6 @@
 import { useHttp } from "../hooks/http.hook";
 import { translateCondition } from "../components/translate/TranslateCondition";
+import { translateDay } from "../components/translate/TranslateDay";
 import i18n from "../components/translate/i18n";
 
 
@@ -102,7 +103,7 @@ const useWeatherService = () => {
             }).format(dateObj).replace("/", ".");
 
             return {
-                day: translateCondition(`${weekdayStr} ${dateStr}`, i18n.language),
+                day: translateDay(`${weekdayStr} ${dateStr}`, i18n.language),
                 temperature: Math.round(d.temp),
                 condition: translateCondition(d.conditions, i18n.language)
             };

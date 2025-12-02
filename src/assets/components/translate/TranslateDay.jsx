@@ -5,22 +5,33 @@ export const translateDay = (day, lang) => {
     const language = lang || i18n.language;
     const map = dayWeek[language];
 
-    if (Array.isArray(condition)) {
-        return day
-            .map(cond => translateDay(cond, language))
-            .join(", ");
+    if (Array.isArray(day)) {
+        return day.map(d => translateDay(d, language)).join(", ");
     }
 
-    if (map[day]) return map[day];
+    if (!day) return "";
 
-    const condLower = day.toLowerCase();
-    if (condLower.includes("monday")) return map["Monday"];
-    if (condLower.includes("tuesday")) return map["Tuesday"];
-    if (condLower.includes("wednesday")) return map["Wednesday"];
-    if (condLower.includes("thursday")) return map["Thursday"];
-    if (condLower.includes("friday")) return map["Friday"];
-    if (condLower.includes("saturday")) return map["Saturday"];
-    if (condLower.includes("sunday")) return map["Sunday"];
+    const parts = day.split(" ");
+    const weekday = parts[0];
+    const rest = parts.slice(1).join(" ");
 
-    return day;
+    const weekdayLower = weekday.toLowerCase();
+
+    let translated =
+        map[weekday] ||
+        map[weekdayLower.charAt(0).toUpperCase() + weekdayLower.slice(1)] || // "monday" → "Monday"
+        null;
+
+    if (!translated) {
+        if (weekdayLower.includes("monday")) translated = map["Monday"];
+        else if (weekdayLower.includes("tuesday")) translated = map["Tuesday"];
+        else if (weekdayLower.includes("wednesday")) translated = map["Wednesday"];
+        else if (weekdayLower.includes("thursday")) translated = map["Thursday"];
+        else if (weekdayLower.includes("friday")) translated = map["Friday"];
+        else if (weekdayLower.includes("saturday")) translated = map["Saturday"];
+        else if (weekdayLower.includes("sunday")) translated = map["Sunday"];
+        else translated = weekday;
+    }
+
+    return rest ? `${translated} ${rest}` : translated;
 };

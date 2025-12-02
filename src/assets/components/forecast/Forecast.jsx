@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import GetWeatherIcon from "../iconMap/IconMap.jsx";
 import useWeatherService from "../../services/WeatherService.jsx";
 import { useTranslation } from 'react-i18next';
+import { translateDay } from "../translate/TranslateDay.jsx";
 import { translateCondition } from "../translate/TranslateCondition.jsx";
 
 import './forecast.scss';
@@ -32,7 +33,7 @@ const Forecast = () => {
                 {days.map((day, index) => (
                     <div className="forecast__details" key={index}>
                         <div className="forecast__border">
-                            <p className="forecast__day">{translateCondition(day.day, i18n.language)}</p>
+                            <p className="forecast__day">{translateDay(day.day, i18n.language)}</p>
                             <GetWeatherIcon />
                             <p className="forecast__temp">
                                 {t('temperature')}: {day.temperature}°C
