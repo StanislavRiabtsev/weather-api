@@ -178,7 +178,6 @@
         &__socials {
             grid-column-gap: 24px;
             grid-row-gap: 24px;
-            display: flex;
         }
 
         &__icon {
@@ -199,6 +198,57 @@
 
         &__bottom-link {
             font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        margin-bottom: 10px;
+
+        &__p2 {
+            font-size: 12px;
+        }
+
+        &__socials {
+            grid-column-gap: 10px;
+        }
+
+        &__icon {
+
+            border-radius: 4px;
+            min-width: 25px;
+            max-width: 25px;
+            min-height: 25px;
+            max-height: 25px;
+
+            &-facebook,
+            &-github,
+            &-instagram,
+            &-linkedin {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .footer__wrapper {
+            grid-row-gap: 20px;
+        }
+
+        &__left {
+            grid-row-gap: 20px;
+        }
+
+        &__bottom {
+            padding-top: 10px;
+        }
+
+        &__bottom-text {
+            font-size: 10px;
+        }
+
+        &__bottom-link {
+            font-size: 10px;
         }
     }
 }
