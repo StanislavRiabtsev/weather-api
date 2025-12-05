@@ -118,7 +118,7 @@
 
         &__secondary {
             border: 3px solid $grey;
-            padding: 10px;
+            padding: 5px;
             border-radius: 15px;
             width: 200px;
             height: 305px;
@@ -134,13 +134,14 @@
 
         &__subtitle {
             font-size: 16px;
-            margin-top: 0;
+            margin-top: 5px;
+            margin-bottom: 10px;
             color: $white;
         }
 
         &__stat {
-            font-size: 14px;
-            padding: 10px;
+            font-size: 12px;
+            padding: 12px 8px;
         }
 
         &__secondary .logo-area {
@@ -182,8 +183,8 @@
         }
 
         &__stat {
-            font-size: 10px;
-            padding: 4px;
+            font-size: 9px;
+            padding: 7px 4px;
         }
 
         &__secondary .logo-area {
