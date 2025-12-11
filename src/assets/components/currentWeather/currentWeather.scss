@@ -14,15 +14,27 @@
     }
 
     &__wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
+        display: grid;
+        /* Настраиваем сетку: 2 колонки, центрируем их */
+        grid-template-columns: auto auto;
         gap: 40px;
-        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+        /* Выравнивание по верху */
+
+        /* СХЕМА ДЛЯ ОБЫЧНЫХ ЭКРАНОВ (Пирамидка) */
+        /* "primary primary" - значит главный блок растянут на 2 колонки сверху */
+        /* "stats wind" - значит внизу слева статы, справа ветер */
+        grid-template-areas:
+            "primary primary"
+            "stats wind";
     }
 
+    /* Привязываем блоки к именам в схеме */
     &__primary {
+        grid-area: primary;
+
+        /* Твои старые стили */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -32,10 +44,12 @@
         width: 340px;
         height: 440px;
         box-sizing: border-box;
-        margin-top: 20px;
+        justify-self: center;
+        /* Центрируем саму карточку в своей зоне */
     }
 
     &__secondary {
+        /* Общие стили для боковых карточек */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -43,11 +57,23 @@
         padding: 20px 10px;
         border-radius: 15px;
         box-sizing: border-box;
-        margin-top: 40px;
         width: 300px;
         height: 405px;
         overflow: hidden;
         position: relative;
+
+        /* Привязка конкретных карточек к зонам Grid */
+        &--stats {
+            grid-area: stats;
+            justify-self: end;
+            /* Прижимаем к центру (к правой стороне своей ячейки) */
+        }
+
+        &--wind {
+            grid-area: wind;
+            justify-self: start;
+            /* Прижимаем к центру (к левой стороне своей ячейки) */
+        }
 
         .logo-area {
             transform: scale(1);
@@ -102,6 +128,24 @@
 
         span:last-child {
             font-weight: 700;
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .current-weather {
+        &__wrapper {
+            grid-template-columns: auto auto auto;
+            grid-template-areas: "stats primary wind";
+            align-items: center;
+        }
+
+        &__secondary--stats {
+            justify-self: center;
+        }
+
+        &__secondary--wind {
+            justify-self: center;
         }
     }
 }
@@ -197,6 +241,25 @@
             font-size: 14px;
             font-weight: 700;
             margin: 5px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .current-weather {
+        margin-top: 20px;
+
+        &__wrapper {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "primary"
+                "stats"
+                "wind";
+        }
+
+        &__title {
+            font-size: 18px;
+            margin-bottom: 0px;
         }
     }
 }

@@ -29,9 +29,10 @@ const CurrentWeather = () => {
     return (
         <div className="current-weather">
             <h2 className="current-weather__title">{t('current')}</h2>
+
             <div className="current-weather__wrapper">
 
-                <div className="current-weather__secondary">
+                <div className="current-weather__secondary current-weather__secondary--stats">
                     <h3 className="current-weather__subtitle">{t('about')}</h3>
                     <ul className="current-weather__stats">
                         <li className="current-weather__stat">
@@ -71,7 +72,7 @@ const CurrentWeather = () => {
                     </p>
                 </div>
 
-                <div className="current-weather__secondary">
+                <div className="current-weather__secondary current-weather__secondary--wind">
                     <h3 className="current-weather__subtitle">{t('wind')}</h3>
                     <Compass />
                 </div>
