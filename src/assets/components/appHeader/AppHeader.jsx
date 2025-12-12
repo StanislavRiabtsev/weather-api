@@ -31,6 +31,21 @@ const AppHeader = () => {
                     data-language="ukranian"
                     className="header__languages-btn"
                     onClick={() => changeLanguage('ukr')}>УКРАЇНСЬКА</button>
+
+                <button
+                    data-language="english"
+                    className="header__languages-btn-phone"
+                    onClick={() => changeLanguage('en')}>EN</button>
+
+                <button
+                    data-language="polish"
+                    className="header__languages-btn-phone"
+                    onClick={() => changeLanguage('pl')}>PL</button>
+
+                <button
+                    data-language="ukranian"
+                    className="header__languages-btn-phone"
+                    onClick={() => changeLanguage('ukr')}>УКР</button>
             </div>
         </header>
     );

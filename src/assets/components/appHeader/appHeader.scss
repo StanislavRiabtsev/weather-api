@@ -26,7 +26,8 @@
         display: flex;
         gap: 0.5rem;
 
-        button {
+        &-btn,
+        &-btn-phone {
             margin: 0;
             padding: 0.5rem 1rem;
             border-radius: 8px;
@@ -79,6 +80,10 @@
                 filter: brightness(0.95);
             }
         }
+
+        &-btn-phone {
+            display: none;
+        }
     }
 }
 
@@ -88,8 +93,11 @@
             font-size: 20px;
         }
 
-        button {
-            font-size: 10px;
+        &__languages {
+
+            &-btn {
+                font-size: 10px;
+            }
         }
     }
 }
@@ -104,9 +112,34 @@
             height: 40px;
         }
 
-        button {
-            padding: 6px 10px;
-            border-radius: 6px;
+        &__languages {
+
+            &-btn {
+                padding: 6px 10px;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .header {
+
+        &__title {
+            font-size: 16px;
+        }
+
+        &__languages {
+            &-btn {
+                display: none;
+            }
+
+            &-btn-phone {
+                display: none;
+                width: 40px;
+                padding: 6px 6px;
+                border-radius: 6px;
+            }
         }
     }
 }
