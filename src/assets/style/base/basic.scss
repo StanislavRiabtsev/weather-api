@@ -48,6 +48,7 @@ body {
   background: linear-gradient(-45deg, #0a1931, #185a9d, #43cea2, #fdbb2d);
 
   background-size: 400% 400%;
+  background-attachment: fixed;
 
   animation: animatedSky 30s ease infinite;
 }
