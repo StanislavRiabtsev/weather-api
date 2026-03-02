@@ -1,84 +1,95 @@
 @use "/src/assets/style/base/variables.scss" as *;
 
 .time-weather {
-    color: $white;
-    font-size: 14px;
-    margin-top: 40px;
+  color: $white;
+  font-size: 14px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 100%;
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  &__table {
+    display: table;
     width: 100%;
-    max-width: 100%;
+    border: 2px solid $grey;
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+    table-layout: fixed;
+  }
 
-    &__table {
-        display: table;
-        width: 100%;
-        border: 2px solid $grey;
-        border-radius: 8px;
-        overflow: hidden;
-        box-sizing: border-box;
-        table-layout: fixed;
+  &__body {
+    display: table-row-group;
+  }
+
+  &__row {
+    display: table-row;
+  }
+
+  &__cell {
+    display: table-cell;
+    padding: 8px;
+    text-align: center;
+    border-right: 2px solid $grey;
+
+    &:last-child {
+      border-right: none;
     }
+  }
 
-    &__body {
-        display: table-row-group;
-    }
+  &__time,
+  &__temp {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 10px 0px;
+  }
+}
 
-    &__row {
-        display: table-row;
-    }
-
-    &__cell {
-        display: table-cell;
-        padding: 8px;
-        text-align: center;
-        border-right: 2px solid $grey;
-
-        &:last-child {
-            border-right: none;
-        }
+@media screen and (max-width: 1200px) {
+  .time-weather {
+    &__title {
+      font-size: 26px;
+      margin-bottom: 16px;
     }
 
     &__time,
     &__temp {
-        font-size: 14px;
-        font-weight: 400;
-        margin: 10px 0px;
+      font-size: 11px;
     }
-}
-
-@media screen and (max-width: 1200px) {
-    .time-weather {
-
-        &__time,
-        &__temp {
-            font-size: 11px;
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .time-weather {
-
-        .time-weather__cell {
-            padding: 4px;
-        }
-
-        &__time,
-        &__temp {
-            font-size: 8px;
-            margin: 6px 0px;
-        }
+  .time-weather {
+    .time-weather__cell {
+      padding: 4px;
     }
+
+    &__time,
+    &__temp {
+      font-size: 12px;
+      margin: 6px 0px;
+      span {
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 430px) {
-    .time-weather {
-        .time-weather__cell {
-            padding: 0px;
-        }
-
-        &__time,
-        &__temp {
-            font-size: 6px;
-            margin: 4px 0px;
-        }
+  .time-weather {
+    .time-weather__cell {
+      padding: 0px;
     }
+
+    &__time,
+    &__temp {
+      font-size: 6px;
+      margin: 4px 0px;
+    }
+  }
 }

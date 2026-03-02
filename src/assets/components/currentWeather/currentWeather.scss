@@ -1,265 +1,202 @@
 @use "/src/assets/style/base/variables.scss" as *;
 
 .current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 15px;
+  color: $white;
+  font-family: "SN Pro", sans-serif;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: "stats primary wind";
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__primary,
+  &__secondary {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 5px solid $grey;
+    border-radius: 15px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  &__primary {
+    grid-area: primary;
+    width: 340px;
+    height: 440px;
+    padding: 1.5em;
     justify-content: center;
-    margin-top: 40px;
-    color: $white;
+  }
 
-    &__title {
-        font-size: 32px;
-        margin-bottom: 30px;
+  &__secondary {
+    width: 300px;
+    height: 405px;
+    padding: 20px 15px;
+    overflow: hidden;
+
+    &--stats {
+      grid-area: stats;
     }
+    &--wind {
+      grid-area: wind;
+    }
+  }
 
+  &__subtitle {
+    font-size: 1.5em;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+  }
+
+  &__temperature,
+  &__condition {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__stats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 5px;
+    font-size: 1.1em;
+    border-bottom: 1px solid rgba($white, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+    span:first-child {
+      color: rgba($white, 0.8);
+    }
+    span:last-child {
+      font-weight: 700;
+    }
+  }
+
+  .logo-area {
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .current-weather {
     &__wrapper {
-        display: grid;
-        /* Настраиваем сетку: 2 колонки, центрируем их */
-        grid-template-columns: auto auto;
-        gap: 40px;
-        justify-content: center;
-        align-items: start;
-        /* Выравнивание по верху */
-
-        /* СХЕМА ДЛЯ ОБЫЧНЫХ ЭКРАНОВ (Пирамидка) */
-        /* "primary primary" - значит главный блок растянут на 2 колонки сверху */
-        /* "stats wind" - значит внизу слева статы, справа ветер */
-        grid-template-areas:
-            "primary primary"
-            "stats wind";
+      gap: 20px;
     }
-
-    /* Привязываем блоки к именам в схеме */
     &__primary {
-        grid-area: primary;
+      width: 280px;
+      height: 380px;
+    }
+    &__secondary {
+      width: 220px;
+      height: 350px;
+      padding: 15px 10px;
+    }
+    &__subtitle {
+      font-size: 19px;
+    }
+    &__stat {
+      font-size: 14px;
+    }
+    &__img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
 
-        /* Твои старые стили */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 5px solid $grey;
-        padding: 1.5em;
-        border-radius: 15px;
-        width: 340px;
-        height: 440px;
-        box-sizing: border-box;
-        justify-self: center;
-        /* Центрируем саму карточку в своей зоне */
+@media screen and (max-width: 768px) {
+  .current-weather {
+    &__primary {
+      max-width: 220px;
+      max-height: 320px;
+      padding: 15px 10px;
     }
 
     &__secondary {
-        /* Общие стили для боковых карточек */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 5px solid $grey;
-        padding: 20px 10px;
-        border-radius: 15px;
-        box-sizing: border-box;
-        width: 300px;
-        height: 405px;
-        overflow: hidden;
-        position: relative;
+      max-width: 200px;
+      max-height: 280px;
+    }
 
-        /* Привязка конкретных карточек к зонам Grid */
-        &--stats {
-            grid-area: stats;
-            justify-self: end;
-            /* Прижимаем к центру (к правой стороне своей ячейки) */
-        }
-
-        &--wind {
-            grid-area: wind;
-            justify-self: start;
-            /* Прижимаем к центру (к левой стороне своей ячейки) */
-        }
-
-        .logo-area {
-            transform: scale(1);
-            transform-origin: center center;
-            transition: transform 0.3s ease;
-            margin-top: 10px;
-        }
+    &__title {
+      font-size: 26px;
     }
 
     &__subtitle {
-        font-size: 1.5em;
-        margin-top: 0;
-        margin-bottom: 20px;
-        color: $white;
+      font-size: 19px;
+    }
+    &__stat {
+      font-size: 12px;
+      padding: 8px 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .current-weather {
+    margin-top: 20px;
+
+    &__title {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    &__wrapper {
+      gap: 15px;
+    }
+
+    &__primary,
+    &__secondary {
+      max-width: 300px;
+      border-width: 3px;
+      padding: 15px;
+    }
+
+    &__subtitle {
+      font-size: 1.1em;
+    }
+
+    &__img {
+      width: 100px;
+      height: 100px;
+    }
+
+    &__stat {
+      font-size: 0.85em;
+      padding: 8px 2px;
     }
 
     &__temperature,
     &__condition {
-        padding-top: 10px;
-        font-size: 1.2em;
-        font-weight: 700;
-        margin: 15px 10px;
+      font-size: 1em;
     }
-
-    &__temp-value {
-        font-weight: 700;
-        margin-left: 10px;
-        color: $white;
-    }
-
-    &__stats {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    &__stat {
-        display: flex;
-        justify-content: space-between;
-        font-size: 1.1em;
-        padding: 13px;
-        color: $white;
-
-        &:not(:last-child) {
-            border-bottom: 1px solid rgba($white, 0.2);
-        }
-
-        span:first-child {
-            color: $white;
-        }
-
-        span:last-child {
-            font-weight: 700;
-        }
-    }
-}
-
-@media screen and (max-width: 1440px) {
-    .current-weather {
-        &__wrapper {
-            grid-template-columns: auto auto auto;
-            grid-template-areas: "stats primary wind";
-            align-items: center;
-        }
-
-        &__secondary--stats {
-            justify-self: center;
-        }
-
-        &__secondary--wind {
-            justify-self: center;
-        }
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .current-weather {
-        &__wrapper {
-            gap: 20px;
-        }
-
-        &__title {
-            font-size: 26px;
-        }
-
-        &__secondary {
-            border: 3px solid $grey;
-            padding: 5px;
-            border-radius: 15px;
-            width: 200px;
-            height: 305px;
-        }
-
-        &__primary {
-            border: 3px solid $grey;
-            padding: 10px;
-            border-radius: 15px;
-            width: 240px;
-            height: 340px;
-        }
-
-        &__subtitle {
-            font-size: 16px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            color: $white;
-        }
-
-        &__stat {
-            font-size: 12px;
-            padding: 12px 8px;
-        }
-
-        &__secondary .logo-area {
-            transform: scale(0.8);
-            margin-top: -10px;
-        }
-
-        &__temperature,
-        &__condition {
-            font-size: 16px;
-            font-weight: 700;
-            margin: 10px 5px;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .current-weather {
-
-        &__wrapper {
-            gap: 10px;
-        }
-
-        &__title {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        &__secondary {
-            border-radius: 10px;
-            width: 150px;
-            height: 205px;
-        }
-
-        &__primary {
-            border-radius: 10px;
-            width: 190px;
-            height: 240px;
-        }
-
-        &__stat {
-            font-size: 9px;
-            padding: 7px 4px;
-        }
-
-        &__secondary .logo-area {
-            transform: scale(0.6);
-        }
-
-        &__temperature,
-        &__condition {
-            padding-top: 0px;
-            font-size: 14px;
-            font-weight: 700;
-            margin: 5px 0px;
-        }
-    }
-}
-
-@media screen and (max-width: 430px) {
-    .current-weather {
-        margin-top: 20px;
-
-        &__wrapper {
-            grid-template-columns: 1fr;
-            grid-template-areas:
-                "primary"
-                "stats"
-                "wind";
-        }
-
-        &__title {
-            font-size: 18px;
-            margin-bottom: 0px;
-        }
-    }
+  }
 }
